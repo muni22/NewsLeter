@@ -3,9 +3,9 @@
 const express = require("express")
 const app = express()
 const bodyParser = require("body-parser")
-const https = require("https")
+
 const mailchimp = require("@mailchimp/mailchimp_marketing")
-const { response } = require("express")
+
 
 
 app.use(bodyParser.urlencoded({extended:true}))
@@ -14,7 +14,7 @@ const port = 3000
 app.use(express.static("public"))
 
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/signup.html")       
+    res.sendFile(__dirname + "/index.html")       
 })
 
 mailchimp.setConfig({
